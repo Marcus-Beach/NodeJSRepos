@@ -1,0 +1,37 @@
+let myName, spouseName, childName; //not going to fill these
+let colorRed = 'Red', colorOrange = 'Orange', colorYellow = 'Yellow', colorGreen = 'Green', colorBlue = 'Blue', colorViolet = 'Violet';
+let favTvShow = "I don't know";
+let diseaseName = 'Chicken Pox';
+let fruitName = 'Pineapple';
+redishString = colorRed;
+orangishString = colorOrange;
+yellowishString = colorYellow;
+greenishString = colorGreen;
+bluishString = colorBlue;
+redishString = 'is ' + redishString + 'ish.';
+orangishString = 'is ' + orangishString + 'ish.';
+yellowishString = 'is ' + yellowishString + 'ish.';
+greenishString = 'is ' + greenishString + 'ish.';
+bluishString = 'is ' + bluishString + 'ish.';
+console.log('redishString: ' + redishString);
+console.log('orangishString: ' + orangishString);
+console.log('yellowishString: ' + yellowishString);
+console.log('greenishString: ' + greenishString);
+console.log('bluishString: ' + bluishString);
+
+let numPets;
+let outsideTemp;
+let itemPrice;
+let planeAlt;
+let houseSqFt;
+let num1 = 1, num2 = 2, num3 = 3, num4 = 4, num5 = 5;
+console.log('num1 before: ' + num1);
+console.log('num1 after: ' + ((num1 + 10 - 1)%7));
+console.log('num2 before: ' + num2);
+console.log('num2 after: ' + ((num2 + 10 - 1)%7));
+console.log('num3 before: ' + num3);
+console.log('num3 after: ' + ((num3 + 10 - 1)%7));
+console.log('num4 before: ' + num4);
+console.log('num4 after: ' + ((num4 + 10 - 1)%7));
+console.log('num5 before: ' + num5);
+console.log('num5 after: ' + ((num5 + 10 - 1)%7));

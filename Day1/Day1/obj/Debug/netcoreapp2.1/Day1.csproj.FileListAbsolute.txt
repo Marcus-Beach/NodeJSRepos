@@ -1,0 +1,4 @@
+C:\Users\edgetech\source\repos\Day1\Day1\obj\Debug\netcoreapp2.1\Day1.csprojAssemblyReference.cache
+C:\Users\edgetech\source\repos\Day1\Day1\obj\Debug\netcoreapp2.1\Day1.csproj.CoreCompileInputs.cache
+C:\Users\edgetech\source\repos\Day1\Day1\obj\Debug\netcoreapp2.1\Day1.AssemblyInfoInputs.cache
+C:\Users\edgetech\source\repos\Day1\Day1\obj\Debug\netcoreapp2.1\Day1.AssemblyInfo.cs
