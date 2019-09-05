@@ -70,7 +70,7 @@ router.get('/getStudent', function(req, res, next) {
     let studentsFound = [];
     let retVal = "";
     students.forEach(function (student){
-        if(student.firstName.startsWith(name) || student.lastName.startsWith(name)){
+        if(student.firstName.startsWith(name) || student.lastName.startsWith(name) || name == null){
             studentsFound.push(student);
         }
     })
@@ -79,6 +79,20 @@ router.get('/getStudent', function(req, res, next) {
                   "Age: " + student.age + "<br>" + 
                   "email: " + student.email + "<br><hr>";
     })
+    res.send(retVal);
+});
+
+router.get('/sortStudent', function(req, res, next) {
+    students = students.sort(function (a, b) {
+        return a.firstName.toLowerCase().localeCompare(b.firstName.toLowerCase())
+    });
+    let retVal = "";
+    students.forEach(function (student){
+        retVal += "Name: " + student.firstName + " " + student.lastName + "<br>" +
+                  "Age: " + student.age + "<br>" + 
+                  "email: " + student.email + "<br><hr>";
+    });
+    retVal.t
     res.send(retVal);
 });
 
@@ -123,17 +137,58 @@ router.get('/addStudent', function(req, res, next) {
 router.get('/deleteStudent', function(req, res, next) {
     let fName = req.query.fname;
     let found = 0;
+    let delList = [];
+    let retVal = "";
     let newList = students.filter(function (student){
         if(student.firstName != fName){
             return student;
         } 
         else {
             found++;
+            delList.push(student);
         }
     });
-    students = newList;
+    if(found > 0){
+        students = newList;
+        delList.forEach(function (student){
+            retVal += "Name: " + student.firstName + " " + student.lastName + "<br>" +
+                        "Age: " + student.age + "<br>" + 
+                        "email: " + student.email + "<br><hr>";
+        });
+    }
+    
+    res.send("Deleted " + found + " students. <hr>" + retVal);
+});
 
-    res.send("Deleted " + found + " students.");
+router.post("/returnStudent", function (req, res, next) {
+    let matchingStudents = [];
+    if (req.body.firstName) {
+        matchingStudents = students.filter(student => 
+            student.firstName.toLowerCase().startsWith(req.body.firstName.toLowerCase())
+            );
+    }
+    if (req.body.lastName) {
+        matchingStudents = students.filter(student => 
+            student.lastName.toLowerCase().startsWith(req.body.lastName.toLowerCase())
+            );
+    }
+    if (req.body.age) {
+        matchingStudents = students.filter(student => 
+            student.age == req.body.age);
+    }
+    if (req.body.email) {
+        matchingStudents = students.filter(student => 
+            student.email.toLowerCase().startsWith(req.body.email.toLowerCase())
+            );
+    }
+    let response = "";
+    matchingStudents.forEach(function (student){
+        response += `Name: ${student.firstName} ${student.lastName}<br>
+                     Age: ${student.age}<br>
+                     Email: ${student.email}<hr>`
+    })
+    
+    res.send(response);
 });
 
 
