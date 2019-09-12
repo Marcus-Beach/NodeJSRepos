@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    a(href="../") Return to Search
+    h1 Job ID #{job.id}
+    table(style='border: 2px solid black')
+        tr
+            td: h3 Company:
+            td #{job.company}
+        tr
+            td: h3 Salary:
+            td #{job.salary.formatMoney(0, "$ ")}
+        tr
+            td: h3 Applied On:
+            td #{job.appliedOn}
+        tr
+            td: h3 City:
+            td #{job.city}
+        tr
+            td: h3 Title:
+            td #{job.title}
+        tr
+            td: h3 Category:
+            td #{job.category}
