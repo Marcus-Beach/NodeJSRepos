@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+                td.greenColor {
+                    color:green;
+                }
+                #uniqueid{
+                    color: blue;
+                }
+                div > span { /* child selector direct decendant only */
+                    font-style: italic;
+                }
+                div a { /* descendant selector, any decendant */
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+                div a:hover { /* descendant selector, any decendant */
+                    color: red;
+                }
+                div+p { /* ajacent sibling selector, any only when they are next to eachother */
+                    font-size: 12pt;
+                }
+            </style>
+    </head>
+    <body>
+        <form action="" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name"><br>
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday"><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email">
+            <input type="submit" value="Go">
+        </form>
+    </body>
+</html>

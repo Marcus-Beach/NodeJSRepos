@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Buy Art</title>
+    </head>
+    <body>
+        <form action="" method="post">
+            <fieldset>
+                <legend>Checkout</legend>
+                <lable for="txtFirstName">First Name:</lable>
+                <input type="text" name="txtFirstName" id="txtFirstName">
+                <lable for="txtLastName">Last Name:</lable>
+                <input type="text" name="txtLastName" id="txtLastName"><br><br>
+                <label for="rdCCType">Credit Card Type</label><br>
+                <input type="radio" name="rdCCType" id="rdVisa" value="Visa">Visa<br>
+                <input type="radio" name="rdCCType" id="rdMasterCard" value="Mastercard">Mastercard<br>
+                <input type="radio" name="rdCCType" id="rdDiscover" value="Discover">Discover<br>
+                <br>
+                <label for="txtCardNumber">Card #:</label>
+                <input type="text" name="txtCardNumber" id="txtCardNumber">
+                <label for="ddExpireMonth">Expiration Month:</label>
+                <select name="ddExpireMonth" class="" id="ddExpireMonth">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <label for="nudExpireYear">Year:</label>
+                <input type="number" name="nudExpireYear" min="2011" max="2025"><br><br>
+                <label for="chkSaveCard">Save Card for Future Purchases</label>
+                <input type="checkbox" name="chkSaveCard" id="chkSaveCard"><br><br>
+                <button type="submit">Complete Purchase</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

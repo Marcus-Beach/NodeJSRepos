@@ -1,0 +1,26 @@
+body{
+    background: url("../images/The\ Anthropomorphic\ Cabinet.jpg") top / cover no-repeat fixed;
+    color: white;
+    margin: 0px;
+}
+h1{
+    background-color: #62433f;
+    color: white;
+    padding: 30px;
+    margin: 0px;
+}
+/* I put footer at relative position otherwise it's in the middle of the page when scrolling down for me */
+footer{
+    background-color: #62433f;
+    padding: 10px;
+    position: relative; 
+    right:0;
+    bottom:0;
+    left:0;
+}
+figure{
+    width: 50%;
+    border: 5px double #62433f;
+    background-color: #98644e;
+    padding: 5px
+}

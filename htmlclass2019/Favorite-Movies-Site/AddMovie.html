@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add Movie</title>
+        <link rel="stylesheet" href="style/main.css">
+    </head>
+    <body>
+        <h1>Add a Movie</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="Title">Title:</label></td>
+                    <td><input type="text" name="Title" id="Title"></td>
+                </tr>
+                <tr>
+                    <td><label for="ReleaseDate">Release Date:</label></td>
+                    <td><input type="date" name="ReleaseDate" id="ReleaseDate"></td>
+                </tr>
+                <tr>
+                    <td><label for="Director">Director:</label></td>
+                    <td><input type="text" name="Director" id="Director"></td>
+                </tr>
+                <tr>
+                    <td><label for="Rating">Rating:</label></td>
+                    <td>
+                        <select name="Rating" id="Rating">
+                            <option value="1">G</option>
+                            <option value="2">PG</option>
+                            <option value="3">PG-13</option>
+                            <option value="4">R</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="RuntimeHours">Runtime Hours:</label></td>
+                    <td><input type="number" name="RuntimeHours" id="RuntimeHours" min="0"></td>
+                </tr>
+                <tr>
+                    <td><label for="RuntimeMinutes">Minutes:</label></td>
+                    <td><input type="number" name="Minutes" id="Minutes" min="0" max="59"></td>
+                </tr>
+                <tr>
+                    <td><label for="Plot">Plot:</label></td>
+                    <td><input type="text" name="Plot" id="Plot"></td>
+                </tr>
+                <tr>
+                    <td><label for="UploadImage">Upload Image:</label></td>
+                    <td><input type="file" name="UploadImage" id="UploadImage"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">Save</button>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mr. Squiggles</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <style>
+            body{
+                display: grid;
+                height: 100%;
+                width: 100%;
+                grid-template-columns: 20em 1em 20em 20em;
+                grid-template-rows: 10em 1em 20em 1em 10em;
+                background-color: grey;
+                font-family: 'Montserrat', sans-serif;
+                background-image: url("/images/wavy lines.jpg");
+            }
+            #header{
+                grid-column: 3 / 5;
+                grid-row: 1;
+                background-color: black;
+                color: white;
+                font-size: 3em;
+                padding: 0.5em;
+            }
+            #sidebar{
+                grid-column: 1;
+                grid-row: 1 / 6;
+                background-color: black;
+                color: white;
+                font-size: 1.5em;
+            }
+            #footer{
+                grid-column: 3 / 5;
+                grid-row: 5;
+                background-color: black;
+                color: white;
+                font-size: 2em;
+                padding: 1em;
+            }
+            #main{
+                grid-column: 3 / 5;
+                grid-row: 3;
+                background-color: black;
+                color: white;
+                padding: 0.5em;
+                font-size: 1.5em;
+            }
+            a:hover{
+                color: grey;
+            }
+            a{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">Mr. Squiggles, A Tribute</div>
+        <div id="sidebar">
+            <a href="#">Pictures of Mr. Squiggles</a><br>
+            <a href="#">Biography of Mr. Squiggles</a><br>
+            <a href="#">Friends of Mr. Squiggles</a><br>
+            <a href="#">Contact</a><br>
+        </div>
+        <div id="main">
+            <img src="/images/wavy lines.jpg" alt="" style="float: left; height: 10em; width: 10em; padding:0.3em;">
+            <span>
+                Mr. Squiggles is what every line hopes to grow up to be.  With just the right amount of zig, 
+                just the right amount of zag, and that special something that makes your eyes almost hurt to look at.
+                <br><br><br>Here's to you Mr. Squiggles.
+            </span>
+        </div>
+        <div id="footer"><i>Always remember to zig, then zag.</i><br>~Mr. Squiggles~</div>
+    </body>
+</html>
