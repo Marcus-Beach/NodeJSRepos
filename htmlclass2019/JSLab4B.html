@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Lab 4B</title>
+        <script>
+            let i = 0;
+            let clicked = false;
+            let changed = true;
+            document.addEventListener("DOMContentLoaded", function (){
+                document.getElementById("textBoxLabel").addEventListener("mouseover", function(){
+                    document.getElementById("sub").innerText = "Enter a color";
+                });
+                document.getElementById("textBoxLabel").addEventListener("mouseout", function(){
+                    document.getElementById("sub").innerText = "";
+                });
+                document.getElementById("textBox").addEventListener("change", function(){
+                    document.getElementById("clickButton").style.color = 
+                    document.getElementById("textBox").value;
+                });
+                
+                document.getElementById("clickButton").addEventListener("click", function(){
+                    clicked = true;
+                    changed = false;
+                });
+                setInterval(function(){
+                    if(clicked)
+                    {
+                        i+=5;
+                        clicked = false
+                    }
+                    if(i > 0){
+                        document.getElementById("sub").innerText = i;
+                        i--;
+                    } else if(i <= 0 && !changed){
+                        document.getElementById("main").style.backgroundColor = 
+                        document.getElementById("textBox").value;
+                        document.getElementById("sub").innerText = "";
+                        changed = true;
+                    }
+                }, 1000)
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <label id="textBoxLabel" for="textBox">Text Box Label</label>
+            <input type="text" name="textBox" id="textBox">
+            <input type="button" value="Click Me" id="clickButton"><br>
+            <div id="sub"></div>
+        </div>
+    </body>
+</html>

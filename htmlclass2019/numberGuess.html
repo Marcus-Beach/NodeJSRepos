@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Lab 4B</title>
+        <script>
+            let num = Math.ceil(Math.random()*100);
+            let guesses = 0;
+            function MakeGuess(){
+                let guess = document.getElementById("guessText").value;
+                let outDiv = document.getElementById("sub");
+                let distance = Math.abs(num - guess);
+                let color = "black";
+                let temp = "";
+                if (distance < 5){
+                    temp = "hot!";
+                    color = "red";
+                } else if (distance < 10){
+                    temp = "warm.";
+                    color = "darkred";
+                } else if (distance < 20){
+                    temp = "room tempurature.";
+                    color = "black";
+                } else {
+                    temp = "cold.";
+                    color = "blue";
+                }
+                if(num == guess){
+                    outDiv.innerHTML += "You won!<br>"
+                } else if(num > guess){
+                    outDiv.innerHTML += guess + " was too low. You are <span style=\"color: " + color + ";\">" + 
+                    temp + "</span><br>"
+                } else {
+                    outDiv.innerHTML += guess + " was too high. You are <span style=\"color: " + color + ";\">" + 
+                    temp + "</span><br>"
+                }
+                guesses++;
+                document.getElementById("guesses").innerText = "Guesses:" + guesses;
+            }
+            document.addEventListener("DOMContentLoaded", function (){
+                document.getElementById("guessLabel").addEventListener("mouseover", function(){
+                    document.getElementById("info").innerText = "This is just a label.";
+                });
+                document.getElementById("guessText").addEventListener("mouseover", function(){
+                    document.getElementById("info").innerText = "Enter a number from 1 to 100.";
+                });
+                document.getElementById("guessButton").addEventListener("mouseover", function(){
+                    document.getElementById("info").innerText = "Click this button to guess.";
+                });
+                document.getElementById("guessLabel").addEventListener("mouseout", function(){
+                    document.getElementById("info").innerText = "Move the mouse over something for more information.";
+                });
+                document.getElementById("guessText").addEventListener("mouseout", function(){
+                    document.getElementById("info").innerText = "Move the mouse over something for more information.";
+                });
+                document.getElementById("guessButton").addEventListener("mouseout", function(){
+                    document.getElementById("info").innerText = "Move the mouse over something for more information.";
+                });
+                document.getElementById("info").addEventListener("mouseover", function(){
+                    document.getElementById("info").innerText = "Where helpful info is shown.";
+                });
+                document.getElementById("info").addEventListener("mouseout", function(){
+                    document.getElementById("info").innerText = "Move the mouse over something for more information.";
+                });
+                document.getElementById("guesses").addEventListener("mouseover", function(){
+                    document.getElementById("info").innerText = "How many guesses you've made.";
+                });
+                document.getElementById("guesses").addEventListener("mouseout", function(){
+                    document.getElementById("info").innerText = "Move the mouse over something for more information.";
+                });
+                document.getElementById("restartButton").addEventListener("mouseover", function(){
+                    document.getElementById("info").innerText = "Click this button to start a new game.";
+                });
+                document.getElementById("restartButton").addEventListener("mouseout", function(){
+                    document.getElementById("info").innerText = "Move the mouse over something for more information.";
+                });
+                document.getElementById("restartButton").addEventListener("click", function(){
+                    document.location.reload();
+                });
+                document.addEventListener('keydown', function (e) {
+                    let text = document.getElementById("guessText").value;
+                    if(text != "" && e.code == "Enter"){
+                        MakeGuess();
+                    }
+                });
+                document.getElementById("guessButton").addEventListener("click", function(){
+                    MakeGuess();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="info" style="font-weight: bold; background-color: black; color: white;">
+                    Move the mouse over something for more information.</div>
+            <br>
+            <div id="guesses">Guesses: 0</div>
+            <br>
+            <label id="guessLabel" for="guessText">Guess:</label>
+            <input type="text" name="guessText" id="guessText">
+            <input type="button" value="Guess" id="guessButton"><input type="button" value="Play Again" id="restartButton"><br>
+            <div id="sub"></div>
+        </div>
+    </body>
+</html>
