@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task List</title>
+    <style>
+        .pending{
+            background-color: lightblue;
+        }
+        .done{
+            background-color: pink;
+            text-decoration: line-through;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("addTaskButton").addEventListener("click", function (){
+                let taskDesc = prompt("Enter Task");
+                let newTask = document.createElement("div");
+                newTask.classList.toggle("pending");
+                let checkBox = document.createElement("input");
+                checkBox.type = "checkbox";
+                checkBox.addEventListener("change", function(){
+                    this.parentElement.classList.toggle("pending");
+                    this.parentElement.classList.toggle("done");
+                });
+                newTask.innerHTML += taskDesc;
+                newTask.appendChild(checkBox);
+                document.body.appendChild(newTask);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="AddTask" id="addTaskButton">
+</body>
+</html>

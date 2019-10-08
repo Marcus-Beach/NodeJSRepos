@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task List</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("searchButton").addEventListener("click", function (){
+                let fetchURL = 'http://www.omdbapi.com?apikey=451cd139&t=' + document.getElementById("searchText").value;
+                fetch(fetchURL).then(r => r.json()).then(body => {
+                    let ratings = "";
+                    body.Ratings.forEach(rating => {
+                        ratings += rating.Source + ": " + rating.Value + "<br>";
+                    });
+                    let actors = ""; 
+                    body.Actors.split(",").forEach(actor => {
+                        actors += actor + "<br>";
+                    });
+                    document.getElementById("movie").innerHTML = 
+                    "<h1>" + body.Title + "</h1><img src='" + body.Poster + "'><br><hr><h2>Plot:</h2>" + body.Plot +
+                    "<hr>" + ratings + "<hr><h2>Actors:</h2>" + actors;
+                    console.log(body);
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <label for="searchText">Movie Title:</label>
+    <input type="text" name="searchText" id="searchText">
+    <input type="button" value="Search" id="searchButton"><br>
+    <div id="movie"></div>
+</body>
+</html>
