@@ -1,0 +1,40 @@
+#movies{
+    width: 40vw;
+    height: 80vh;
+    border: 2px solid black;
+    background-color: lightgray;
+    float: left;
+    overflow: auto;
+}
+#movieInfo{
+    width: 40vw;
+    height: 80vh;
+    border: 2px solid black;
+    background-color: darkgray;
+    float: left;
+    position: relative;
+    left: 5vw;
+    overflow: auto;
+}
+#movieSearch{
+    position: absolute;
+    bottom: 10vh;
+    background-color: lightgray;
+}
+body{
+    background-color: black;
+}
+.movie{
+    width: 39vw;
+}
+.title{
+    font-size: 2em;
+    font-weight: bold;
+    margin: .67em;
+    text-align: center;
+}
+.poster{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
